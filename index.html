@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon (optional) -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Jenna Saunders | Portfolio</title>
+  </head>
+
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a class="nav__logo" href="#home">Jenna <span>Saunders</span></a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a class="nav__link active-link" href="#home">Home</a></li>
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#skills">Skills</a></li>
+            <li><a class="nav__link" href="#resume">Resume</a></li>
+            <li><a class="nav__link" href="#projects">Projects</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+
+        <div class="nav__actions">
+          <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+            <i class="ri-menu-3-line"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h3 class="home__subtitle">Hello, <span>I’m</span></h3>
+            <h1 class="home__title">Jenna Saunders</h1>
+            <h2 class="home__education">AI & Automation Product Builder • Technical TPM Track</h2>
+
+            <p class="home__description">
+            I translate stakeholder needs into intelligent systems — from LLM-enabled knowledge assistants and
+            event-driven workflows to decision dashboards and automation agents.
+            I love turning ambiguity into clear scope, measurable outcomes, and shippable solutions.
+            </p>
+
+            <div class="home__actions">
+            <a class="button" href="#projects">See demos</a>
+            <a class="button button--ghost" href="./resume/index.html" target="_blank" rel="noreferrer">View resume</a>
+            </div>
+
+            <div class="home__social">
+              <a class="home__social-link" href="https://github.com/HappyCampr" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <i class="ri-github-fill"></i>
+            </a>
+            <a class="home__social-link" href="https://www.linkedin.com/in/jsaun4321" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <i class="ri-linkedin-box-fill"></i>
+            </a>
+            </div>
+          </div>
+
+          <div class="home__image">
+            <!-- Put your headshot at: assets/img/profile.jpg -->
+            <img class="home__img" src="assets/img/profile.jpg" alt="Portrait" />
+          </div>
+        </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+        <div class="container">
+          <h3 class="section__subtitle">My <span>Intro</span></h3>
+          <h2 class="section__title">About Me</h2>
+
+          <div class="about__container grid">
+            <div class="about__image">
+              <img class="about__img" src="assets/img/profile.jpg" alt="Portrait" />
+            </div>
+
+            <div class="about__data">
+                <p class="about__description">
+                    I’m a systems thinker who gets energized when stakeholders are confused — because it’s my favorite
+                    moment to clarify the real problem, define the right level of automation, and ship something useful.
+                </p>
+
+                <p class="about__description">
+                    In my current work, I support AI and student experience initiatives by designing LLM-assisted knowledge workflows,
+                    building event-driven automation, and delivering dashboards that help leaders act on early signals.
+                    I’m comfortable bridging engineering, product, and operations — and I’m known for clear demos,
+                    strong documentation, and pragmatic tradeoffs.
+                </p>
+
+                <p class="about__description">
+                    My focus: human-centered automation that reduces friction, improves decision quality, and scales responsibly.
+                </p>
+
+              <a class="button button--ghost" href="#contact">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section" id="skills">
+        <div class="container">
+          <h3 class="section__subtitle">Favorite <span>Skills</span></h3>
+          <h2 class="section__title">My Skills</h2>
+
+          <div class="skills__container grid">
+            <div class="skills__content">
+                <p class="skills__description">
+                    I’m strongest when I can combine stakeholder discovery, technical architecture, and measurable outcomes.
+                    Here are the capability areas I use most to deliver AI + automation products end-to-end.
+                </p>
+              <a class="button" href="#projects">See Projects</a>
+            </div>
+
+            <div class="skills__list grid">
+            <div class="skills__group">
+                <h3 class="skills__group-title">Product & Stakeholder Leadership</h3>
+                <ul class="skills__items">
+                <li>Problem framing & requirements</li>
+                <li>Cross-functional alignment</li>
+                <li>Tradeoff decisions (cost, risk, complexity)</li>
+                <li>Metrics definition & impact storytelling</li>
+                <li>Demos, training, and documentation</li>
+                </ul>
+            </div>
+
+            <div class="skills__group">
+                <h3 class="skills__group-title">AI Systems & Responsible Delivery</h3>
+                <ul class="skills__items">
+                <li>LLM prototyping & prompt strategy</li>
+                <li>Model behavior evaluation</li>
+                <li>Knowledge-base retrieval workflows</li>
+                <li>Human-in-the-loop design</li>
+                <li>Responsible AI adoption support</li>
+                </ul>
+            </div>
+
+            <div class="skills__group">
+                <h3 class="skills__group-title">Automation & Workflow Architecture</h3>
+                <ul class="skills__items">
+                <li>Event-driven automation (Segment + Kafka/MSK)</li>
+                <li>Automation Anywhere (bots & AI agents)</li>
+                <li>API integrations (Salesforce + internal systems)</li>
+                <li>Process redesign & operational simplification</li>
+                <li>Infrastructure as Code (Terraform)</li>
+                </ul>
+            </div>
+
+            <div class="skills__group">
+                <h3 class="skills__group-title">Analytics & Decision Systems</h3>
+                <ul class="skills__items">
+                <li>Forecasting & leading indicators</li>
+                <li>Power BI / DAX dashboards</li>
+                <li>Python, SQL, data modeling</li>
+                <li>A/B testing & experimentation (intro)</li>
+                <li>Risk modeling foundations (Exam P track)</li>
+                </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== RESUME ====================-->
+        <section class="section" id="resume">
+            <div class="container">
+                <h3 class="section__subtitle">Professional <span>Background</span></h3>
+                <h2 class="section__title">Experience & Credentials</h2>
+
+                <div class="resume__container">
+                <p class="resume__description">
+                    For a deeper look at my work leading AI, automation, and analytics initiatives — from discovery and
+                    stakeholder alignment to secure implementation and measurable outcomes — view my resume.
+                </p>
+
+                <a class="button" href="./resume/index.html" target="_blank" rel="noreferrer">
+                    View Resume
+                </a>
+                </div>
+            </div>
+        </section>
+
+      <!--==================== PROJECTS ====================-->
+      <section class="projects section" id="projects">
+        <div class="container">
+          <h3 class="section__subtitle">My <span>Work</span></h3>
+          <h2 class="section__title">Recent Projects</h2>
+
+          <div class="projects__container grid">
+            <article class="projects__card projects__card--featured">
+                <div class="projects__thumb projects__thumb--image">
+                <img
+                    src="assets/img/amazondash.png"
+                    alt="Amazon E-commerce Sales Dashboard screenshot"
+                    loading="lazy"
+                />
+                </div>
+
+                <div class="projects__data">
+                <div class="projects__top">
+                    <span class="projects__subtitle">Interactive Analytics</span>
+                    <span class="projects__badge">Live Demo</span>
+                </div>
+
+                <h3 class="projects__title">Amazon E-commerce Sales Dashboard (Dash)</h3>
+
+                <p class="projects__description">
+                    Production-deployed Dash app for exploring Amazon e-commerce sales with fast filtering,
+                    KPIs, and deep-dive views (including outlier analysis).
+                </p>
+
+                <ul class="projects__bullets">
+                    <li>Multi-page dashboard (overview + profitability/outliers)</li>
+                    <li>Interactive filters with clean state management for fast iteration</li>
+                    <li>Dockerized build, deployed to Google Cloud Run via IaC workflow</li>
+                </ul>
+
+                <div class="projects__chips" aria-label="Tech stack">
+                    <span class="chip">Python</span>
+                    <span class="chip">Dash</span>
+                    <span class="chip">Plotly</span>
+                    <span class="chip">Pandas</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">Cloud Run</span>
+                    <span class="chip">Terraform</span>
+                    <span class="chip">Spacelift</span>
+                </div>
+
+                <div class="projects__actions">
+                    <a
+                    class="button button--small"
+                    href="https://dash-portfolio-ug3lp37a6a-uc.a.run.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >
+                    Open dashboard <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                    <a
+                    class="button button--ghost button--small"
+                    href="https://github.com/HappyCampr/Dash-Amazon-E-commerce-Sales-Dataset"
+                    target="_blank"
+                    rel="noreferrer"
+                    >
+                    View repo <i class="ri-github-fill"></i>
+                    </a>
+                </div>
+                </div>
+            </article>
+
+            <article class="projects__card">
+                <div class="projects__thumb projects__thumb--image">
+                    <img
+                        src="assets/img/AutomationAnywhere.png"
+                        alt="Automation Anywhere Product Review Data Insights AI Agent"
+                        loading="lazy"
+                    />
+                </div>
+
+                <div class="projects__data">
+                    <div class="projects__top">
+                    <span class="projects__subtitle">AI Agent • Automation Anywhere</span>
+                    <span class="projects__badge">3rd Place Winner</span>
+                    </div>
+
+                    <h3 class="projects__title">Product Review Data Insights (AI Agent)</h3>
+
+                    <p class="projects__description">
+                    Automation Anywhere AI Agent built for the Agentic Bounty Competition.
+                    Ingests product review data (CSV/JSON), adds sentiment scoring, and generates actionable
+                    stakeholder insights for the top 3 most-reviewed products.
+                    </p>
+
+                    <ul class="projects__bullets">
+                    <li>Flexible mapping: no required column naming conventions</li>
+                    <li>Creates “ready-to-process” CSV + sentiment analysis column</li>
+                    <li>Generates a 200–500 word insights write-up per top product</li>
+                    </ul>
+
+                    <div class="projects__chips" aria-label="Tech stack">
+                    <span class="chip">Automation 360</span>
+                    <span class="chip">AI Agent</span>
+                    <span class="chip">Sentiment Analysis</span>
+                    <span class="chip">CSV/JSON</span>
+                    <span class="chip">Python 3.11+</span>
+                    <span class="chip">Pandas</span>
+                    </div>
+
+                    <div class="projects__actions">
+                    <a
+                        class="button button--small"
+                        href="https://botstore.automationanywhere.com/bot/product-review-data-insights"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        View in Bot Store <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                    <a
+                        class="button button--ghost button--small"
+                        href="https://www.linkedin.com/posts/micahdanielsmith_automationanywhere-aiagents-activity-7429560606946406400-2wPJ"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Winner announcement <i class="ri-linkedin-box-fill"></i>
+                    </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="projects__card">
+                <div class="projects__thumb projects__thumb--3"></div>
+                <div class="projects__data">
+                <span class="projects__subtitle">Integrations</span>
+                <h3 class="projects__title">Microsoft Graph Notes MCP</h3>
+                <a class="projects__button" href="#" target="_blank" rel="noreferrer">
+                    View repo <i class="ri-arrow-right-line"></i>
+                </a>
+                </div>
+            </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+            <div class="container">
+                <h3 class="section__subtitle">Get In <span>Touch</span></h3>
+                <h2 class="section__title">Contact</h2>
+
+                <div class="contact__card">
+                <p class="contact__text">
+                    The fastest way to reach me is on LinkedIn. I’m happy to connect and discuss roles,
+                    collaborations, or demos.
+                </p>
+
+                <div class="contact__actions">
+                    <a class="button" href="https://www.linkedin.com/in/jsaun4321" target="_blank" rel="noreferrer">
+                    Message me on LinkedIn
+                    </a>
+
+                    <a class="button button--ghost" href="./resume/index.html" target="_blank" rel="noreferrer">
+                    View Resume
+                    </a>
+                </div>
+                </div>
+            </div>
+        </section>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer__container container">
+        <h3 class="footer__title">Jenna <span>Saunders</span></h3>
+        <p class="footer__education">Data • Automation • IST Leadership</p>
+
+        <div class="footer__social">
+          <a class="footer__social-link" href="https://github.com/" target="_blank" rel="noreferrer">
+            <i class="ri-github-fill"></i>
+          </a>
+          <a class="footer__social-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            <i class="ri-linkedin-box-fill"></i>
+          </a>
+        </div>
+
+        <span class="footer__copy">&#169; 2026 Jenna Saunders. All rights reserved.</span>
+      </div>
+        <p class="footer__credit">
+            Template adapted from <a href="https://github.com/bedimcode/responsive-portfolio-website-patrick" target="_blank">Bedimcode</a>.
+        </p>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#home" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
