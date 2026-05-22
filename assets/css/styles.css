@@ -339,6 +339,15 @@ img { max-width: 100%; height: auto; display: block; }
 .resume__description { line-height: 1.75; }
 
 /*=============== PROJECTS ===============*/
+.projects__intro {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  color: var(--text-color);
+  opacity: .82;
+  text-align: center;
+  line-height: 1.75;
+}
+
 .projects__container { grid-template-columns: 1fr; }
 .projects__card {
   overflow: hidden;
@@ -439,6 +448,40 @@ img { max-width: 100%; height: auto; display: block; }
   padding: .7rem 1.05rem;
   border-radius: .75rem;
   font-size: .9rem;
+}
+
+/*==================== IN-DEVELOPMENT PROJECT CARD ====================*/
+.projects__card--in-progress {
+  position: relative;
+}
+
+.projects__construction-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 100%;
+  padding: 2rem 1rem;
+  color: var(--primary);
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: .04rem;
+  text-transform: uppercase;
+}
+
+.projects__construction-label i {
+  font-size: 2.5rem;
+}
+
+.projects__badge--progress {
+  opacity: .9;
+}
+
+.button--disabled {
+  cursor: not-allowed;
+  opacity: .68;
+  pointer-events: none;
 }
 
 
