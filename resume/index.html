@@ -1,175 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Jenna Saunders · Data & AI Engineer</title>
-<style>
-  :root{
-    --bg:#0a1520; --panel:#1a2632; --text:#e8f0ff; --muted:#a8c5d1; --accent:#90d8b2;
-    --secondary:#fcc9b5; --tertiary:#4db8d8; --border:#4db8d8;
-    --panel-grad: linear-gradient(180deg,#172331 0%, #1a2a3a 100%);
-  }
-  body{margin:0;font-family:"Apple Garamond","Times New Roman",serif;background:var(--bg);color:var(--text)}
-  main,.hdr{max-width:900px;margin:0 auto;padding:5px}
-  .hdr{display:flex;flex-direction:column;gap:8px}
-  .hdr h1{font-size:34px;line-height:1.1;margin:6px 0 2px;background:linear-gradient(90deg,#e8f0ff 0%,var(--accent) 45%,var(--tertiary) 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .tagline{font-size:16px;color:var(--muted);margin-bottom:6px}
-  .contact{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(42,54,66,.7);border:1px solid var(--border);font-size:12.8px}
-  .chip a{color:inherit;text-decoration:none}
-  .section{margin-top:14px;padding:15px;border:1px solid var(--border);border-radius:14px;background:var(--panel-grad);box-shadow:0 6px 18px rgba(0,115,230,.12)}
-  .section h2{margin:0 0 5px;font-size:18px;color:var(--accent);padding-bottom:4px;border-bottom:2px solid transparent;border-image:linear-gradient(90deg,var(--accent) 0%,var(--tertiary) 60%,var(--secondary) 100%) 1;border-image-slice:1}
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .skills{display:flex;flex-wrap:wrap;gap:6px}
-  .skill{font-size:12.6px;padding:3px 8px;border-radius:999px;background:linear-gradient(135deg,#28465a 0%,#203141 100%);border:1px solid var(--border)}
-  .bullets{margin:6px 0 0;padding-left:18px}
-  .bullets li{margin:2px 0}
-  .role{break-inside:avoid;page-break-inside:avoid;margin-top:10px}
-  .role h3{margin:0;font-size:16px}
-  .role .meta{font-size:12.6px;color:var(--muted);margin-top:2px}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-  .card{border:1px solid var(--border);border-radius:10px;background:var(--panel-grad);padding:8px;min-height:90px;line-height:1.25}
-  .card h4{margin:0 0 4px;font-size:14px}
-  .card p{margin:0;font-size:12.6px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jenna Saunders - Analytics Engineer | Data & AI Engineer</title>
+  <style>
+    :root{
+      /* Approved palette (dark theme) */
+      --bg:#0a1520;
+      --panel:#1a2632;
+      --text:#e8f0ff;
+      --muted:#a8c5d1;
+      --accent:#90d8b2;
+      --secondary:#fcc9b5;
+      --tertiary:#4db8d8;
+      --chip:#2a3642;
+      --border:#4db8d8;
+      --shadow:0 10px 30px rgba(0,115,230,.15);
+      --radius:16px;
 
-  /* Simple spacer to keep separation on print */
-  .spacer{display:block;height:72px;width:100%}
-</style>
+      --panel-grad: linear-gradient(180deg, #172331 0%, #1a2a3a 100%);
+      --chip-grad: linear-gradient(135deg, #28465a 0%, #203141 100%);
+      --h2-grad: linear-gradient(90deg, var(--accent) 0%, var(--tertiary) 60%, var(--secondary) 100%);
+    }
+
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+    body{
+      margin:0;
+      background: radial-gradient(1100px 700px at 15% 10%, rgba(77,184,216,.18), transparent 60%),
+                  radial-gradient(900px 650px at 90% 20%, rgba(144,216,178,.14), transparent 55%),
+                  radial-gradient(900px 700px at 50% 95%, rgba(252,201,181,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      line-height:1.38;
+    }
+
+    a{ color:var(--tertiary); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 980px;
+      margin: 18px auto 36px;
+      padding: 0 4px;
+    }
+
+    .hdr{
+      border:1px solid rgba(77,184,216,.35);
+      background: var(--panel-grad);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 4px 4px 0px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hdr::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(700px 220px at 20% 0%, rgba(144,216,178,.16), transparent 70%),
+        radial-gradient(600px 240px at 90% 10%, rgba(252,201,181,.14), transparent 70%);
+      pointer-events:none;
+    }
+    .hdr > *{ position:relative; z-index:1; }
+
+    .name{
+      margin:0;
+      font-size: 28px;
+      letter-spacing:.2px;
+      line-height:1.05;
+      background: linear-gradient(90deg, #e8f0ff 0%, var(--accent) 45%, var(--tertiary) 80%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+      font-weight: 800;
+    }
+    .tagline{
+      margin: 4px 0 4px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:3px;
+      margin-top: 4px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding: 3px 4px;
+      border-radius: 999px;
+      background: var(--chip-grad);
+      border: 1px solid rgba(77,184,216,.35);
+      color: var(--text);
+      font-size: 12.8px;
+      white-space: nowrap;
+    }
+    .chip .k{
+      color: var(--muted);
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .chip .v{
+      color: var(--text);
+      font-weight:700;
+    }
+
+
+    .grid{
+      display:grid;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    @media (min-width: 900px){
+      .grid-2{ grid-template-columns: 2fr 1fr; }
+    }
+
+    .section{
+      border:1px solid rgba(77,184,216,.35);
+      background: var(--panel-grad);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 14px 14px 12px;
+    }
+    .section h2{
+      margin: 0 0 4px;
+      font-size: 14px;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+      border-image: var(--h2-grad) 1;
+      letter-spacing: .2px;
+    }
+
+    .muted{ color: var(--muted); }
+
+    .summary{
+      font-size: 14.4px;
+      margin: 0;
+    }
+
+    .skills{
+      display:grid;
+      gap: 4px;
+    }
+    .skills h3{
+      margin: 0 0 6px;
+      font-size: 13.6px;
+      color: var(--secondary);
+      letter-spacing:.2px;
+    }
+    .pillrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:4px;
+    }
+    .pill{
+      padding: 3px 4px;
+      border-radius: 999px;
+      background: rgba(42,54,66,.85);
+      border:1px solid rgba(77,184,216,.28);
+      font-size: 12.8px;
+      color: var(--text);
+    }
+
+    .role{
+      padding: 10px 0 0;
+    }
+    .role:first-of-type{ padding-top: 0; }
+    .role + .role{
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed rgba(77,184,216,.28);
+    }
+    .rolehead{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 4px 6px;
+      align-items:baseline;
+      margin:0 0 6px;
+    }
+    .rolehead .title{
+      font-weight: 800;
+      color: var(--text);
+      font-size: 14.6px;
+    }
+    .rolehead .org{
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 14.2px;
+    }
+    .rolehead .meta{
+      color: var(--muted);
+      font-size: 12.8px;
+      margin-left:auto;
+      white-space: nowrap;
+    }
+
+    ul{
+      margin: 8px 0 0;
+      padding-left: 9px;
+    }
+    li{ margin: 6px 0; }
+
+    .projects .proj{
+      margin: 0 0 4px;
+      padding: 4px;
+      border-radius: 14px;
+      background: rgba(42,54,66,.6);
+      border: 1px solid rgba(77,184,216,.22);
+    }
+    .projects .proj:last-child{ margin-bottom:0; }
+    .proj b{ color: var(--text); }
+    .proj .hint{ color: var(--muted); font-size: 12.6px; margin-top: 4px; }
+
+    .edu .item{
+      padding: 4px;
+      border-radius: 14px;
+      background: rgba(42,54,66,.6);
+      border: 1px solid rgba(77,184,216,.22);
+      margin-bottom: 4px;
+    }
+    .edu .item:last-child{ margin-bottom:0; }
+    .edu .deg{ font-weight: 800; }
+    .edu .school{ color: var(--muted); margin-top: 2px; }
+
+    .footnote{
+      margin-top: 4px;
+      font-size: 12.3px;
+      color: var(--muted);
+      text-align:center;
+      opacity:.95;
+    }
+
+    /* Print */
+    @media print{
+      html, body{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      @page { size: Letter; margin: 0.3in; }
+      body{ background: none !important; }
+      body::before{
+        content:"";
+        position: fixed;
+        inset: 0;
+        background: var(--bg);
+        z-index: -1;
+      }
+      .wrap{ margin: 0; max-width: none; padding: 0; }
+      .section, .hdr{
+        box-shadow: none !important;
+      }
+      a{ text-decoration: none; }
+      .role{ break-inside: avoid; page-break-inside: avoid; }
+      .proj{ break-inside: avoid; page-break-inside: avoid; }
+      .item{ break-inside: avoid; page-break-inside: avoid; }
+    }
+
+    @media print {
+        body{font-size:62%; line-height: 1.25;}
+    /* Force side-by-side columns in print */
+    .grid-2{
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .grid-2 > *{ float:left!important; width:56%!important; }
+    .grid-2 > *:nth-child(2){ width:44%!important; margin-left:0%!important; }
+
+    .grid-2::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .rolehead .title { font-size: 12px !important; }
+    .rolehead .org { font-size: 11px !important; }
+
+    .section { padding: 6px 7px 5px !important; }
+    .grid { gap: 6px !important; }
+    }
+  </style>
 </head>
-<body>
-  <header class="hdr">
-    <h1>Jenna Saunders</h1>
-    <div class="tagline">Data &amp; AI Engineer | Building reliable, cloud-scale data pipelines and intelligent automation systems</div>
-    <div class="contact">
-      <span class="chip"><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/jsaun4321">https://www.linkedin.com/in/jsaun4321</a></span>
-      <span class="chip"><span class="label">Portfolio</span> <a href="https://happycampr.github.io/jenna-resume-ai-ml/">https://happycampr.github.io/jenna-resume-ai-ml/</a></span>
-    </div>
-  </header>
 
-  <main>
-    <section class="section grid-2">
-      <div>
-        <h2>Data Engineering • Cloud &amp; Security</h2>
-        <div class="skills">
-          <span class="skill">Python</span><span class="skill">SQL</span>
-          <span class="skill">ETL Pipelines</span><span class="skill">Data Modeling</span>
-          <span class="skill">Logging &amp; Monitoring</span><span class="skill">Data Quality &amp; Anomaly Detection</span>
-          <span class="skill">Access Control &amp; Token Management</span>
-          <span class="skill">On-Behalf-Of (OBO) Auth</span>
-          <span class="skill">Microsoft Graph API</span><span class="skill">SharePoint Search API</span>
-          <span class="skill">Power BI / DAX</span>
-          <span class="skill">Machine Learning</span><span class="skill">Forecasting</span>
-          <span class="skill">Model Evaluation</span>
-        </div>
+<body>
+  <main class="wrap">
+
+    <header class="hdr">
+      <h1 class="name">Jenna Saunders</h1>
+      <div class="tagline"><b>Analytics Engineer | Data & AI Engineer</b> · Remote - United States</div>
+
+      <div class="chips" aria-label="Contact">
+        <div class="chip"><span class="k">LinkedIn</span><span class="v">https://www.linkedin.com/in/jsaun4321</span></div>
+        <div class="chip"><span class="k">Portfolio</span><span class="v">https://happycampr.github.io/Jenna-Portfolio/</span></div>
       </div>
-      <div>
-        <h2>Cloud &amp; Access Platforms</h2>
-        <div class="skills">
-          <span class="skill">AWS S3</span><span class="skill">AWS Athena</span><span class="skill">AWS Redshift</span>
-          <span class="skill">AWS Lambda</span><span class="skill">AWS Step Functions</span><span class="skill">AWS EventBridge</span>
-          <span class="skill">AWS API Gateway</span><span class="skill">AWS Secrets Manager</span>
-          <span class="skill">AWS Bedrock</span><span class="skill">CloudWatch</span>
-          <span class="skill">Automation Anywhere</span><span class="skill">Airflow</span>
-          <span class="skill">Terraform (basic)</span><span class="skill">JavaScript</span>
+    </header>
+
+    <section class="section">
+      <h2>Core Skills</h2>
+
+      <div class="skills">
+
+        <div>
+          <h3>Analytics Engineering</h3>
+          <div class="pillrow">
+            <span class="pill">Advanced SQL transformations</span>
+            <span class="pill">CTEs, joins, window functions, manual pivots</span>
+            <span class="pill">Python analytics workflows</span>
+            <span class="pill">Data modeling & metric definition</span>
+            <span class="pill">ETL / analytics pipelines</span>
+            <span class="pill">Data quality validation & backfill</span>
+            <span class="pill">Oracle-to-Redshift migration</span>
+            <span class="pill">LLM-ready data preparation</span>
+            <span class="pill">Forecasting & time-series analysis</span>
+            <span class="pill">A/B testing concepts</span>
+          </div>
         </div>
+
+        <div>
+          <h3>Data Platforms</h3>
+          <div class="pillrow">
+            <span class="pill">AWS Redshift</span>
+            <span class="pill">AWS Athena</span>
+            <span class="pill">AWS S3</span>
+            <span class="pill">AWS Lambda</span>
+            <span class="pill">Airflow-supported workflows</span>
+            <span class="pill">DBeaver</span>
+            <span class="pill">AWS MSK / Kafka consumers</span>
+            <span class="pill">Segment audiences & journeys</span>
+            <span class="pill">FAISS vector indexes</span>
+            <span class="pill">Fivetran exposure</span>
+            <span class="pill">GitHub / Bitbucket PR workflows</span>
+            <span class="pill">Terraform + Spacelift</span>
+            <span class="pill">Power BI / DAX</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section class="section">
-      <h2>Engineering Strengths</h2>
-      <div class="cards">
-        <div class="card"><h4>Cross-Functional Coordination</h4><p>Brings IT, Data, and Security teams together to ship governed data solutions and high-availability pipelines.</p></div>
-        <div class="card"><h4>Stakeholder Clarity Builder</h4><p>Turns fuzzy requests into clear data problems; aligns pipeline requirements with reliability and access needs.</p></div>
-        <div class="card"><h4>Personality Bridge Builder</h4><p>Connects across personalities; draws out quieter engineers to surface insights and unblock progress.</p></div>
-        <div class="card"><h4>Risk Mitigation</h4><p>Cut IP intelligence costs ~50%; researched lifecycle and access controls to reduce risk and spend.</p></div>
-        <div class="card"><h4>Presentation Excellence</h4><p>Organization-wide demos and trainings; co-presented MCP training at Technopalooza to 200+ IT engineers.</p></div>
-        <div class="card"><h4>Innovation Catalyst</h4><p>Modernized legacy workflows via secure, AI-assisted automations; used Graph API to accommedate stakeholder needs; event-driven archtecture</p></div>
-      </div>
+
+      <h2>Data Systems & Decision Support</h2>
+
+      <ul>
+
+        <li><b>SQL Transformation & Migration</b> - Converted legacy Oracle SQL into Redshift-based analytics logic, including complex joins, manual pivots, CTEs, and event-ordering logic to reproduce trusted tables from difficult source data.</li>
+
+        <li><b>LLM-Ready Knowledge Retrieval</b> - Prepared Salesforce knowledge-base content for LLM-assisted search by cleaning source articles, structuring metadata JSON, and creating FAISS vector indexes.</li>
+
+        <li><b>Event-Driven Data Integration</b> - Built AWS MSK/Kafka consumers that enrich event records, publish to Segment audiences and journeys, create CSV outputs, and trigger workflow processing.</li>
+
+        <li><b>Student Success Forecasting System</b> - Built Power BI dashboards with user-adjustable assumptions for withdrawal and failure projections, enabling earlier intervention planning.</li>
+
+        <li><b>Agentic Review Insights System</b> - Built a reusable workflow that accepts CSV or JSON uploads, maps user-provided fields, cleans source data, and prepares records for LLM-generated product review insights.</li>
+
+      </ul>
+
     </section>
 
-    <section class="section grid-2 section--projects">
-      <div>
-        <h2>Selected Projects</h2>
-        <ul class="bullets">
-          <li><strong>Secure API Access Gateway</strong> — Designed governed Salesforce API access using AWS Secrets Manager and API Gateway; enabled self-service queries while enforcing data security.</li>
-          <li><strong>SharePoint File Automation</strong> — Automated file access and movement with Microsoft Graph API and OBO tokens in Automation Anywhere; added safe logging for MCP workflows.</li>
-          <li><strong>AWS Pipeline Consolidation</strong> — Unified Lambda/Step Functions pipelines with EventBridge monitoring; improved reliability and reduced maintenance load.</li>
-          <li><strong>Forecasting Dashboard</strong> — Power BI/DAX SPI and W/F forecasting with Redshift/Athena sources to surface trends and anomalies.</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Communication • Impact</h2>
-        <ul class="bullets">
-          <li>Technology translator — turns complex data engineering and AI work into clear stories and demos.</li>
-          <li>Delivered MCP/AI training to 200+ engineers; frequent presenter and demo lead on secure automation and data-handling practices.</li>
-          <li>Hackathon wins and DeepRacer team win highlight rapid prototyping and measurable outcomes.</li>
-        </ul>
-      </div>
-    </section>
+    <div class="grid grid-2">
 
+      <section class="section">
 
-    <section class="section section--experience">
-      <h2>Experience</h2>
-      <div class="role">
-        <h3><strong>IT and Data Engineer</strong> · University of Phoenix</h3>
-        <div class="meta">May 2023 to Present</div>
-        <ul class="bullets">
-          <li>Designed and maintained AWS analytics pipelines (S3, Redshift, Athena, Lambda, Step Functions, EventBridge, API Gateway, Secrets Manager, Bedrock) ensuring secure, high-availability data access.</li>
-          <li>Implemented Microsoft Graph and SharePoint API integrations via Automation Anywhere; developed OBO-authenticated automations for safe file handling and logging in MCP workflows.</li>
-          <li>Consolidated three Automation Anywhere bots into a single optimized pipeline; increased reliability and reduced operational overhead.</li>
-          <li>Developed LLM prompt-testing and an MCP-integrated chatbot POC with secure logging and model evaluation.</li>
-          <li>Built Power BI/DAX forecasting dashboards to detect anomalies and drive KPI-based operational decisions.</li>
-          <li>Partnered with IT, Product, and Security to remediate vulnerabilities and strengthen access-control policies.</li>
-          <li>Led org-wide demos and delivered MCP/AI trainings to 200+ engineers; promoted responsible automation practices.</li>
-        </ul>
-      </div>
-      <div class="role">
-        <h3><strong>Teaching and Academic Leadership</strong> · Multiple Schools</h3>
-        <div class="meta">2016 to 2022</div>
-        <ul class="bullets">
-          <li>Taught a standalone high school Statistics course; led department of 400+ students.</li>
-          <li>Designed LMS classrooms and reusable digital activities using Canvas, Blackboard, Moodle, and K12 LMS.</li>
-          <li>Built interactive Desmos activities and assessments to drive concept mastery and engagement.</li>
-          <li>Produced instructional videos and recordings to support blended learning and accessibility.</li>
-        </ul>
-      </div>
-    </section>
+        <h2>Professional Experience</h2>
 
-    <section class="section grid-2">
-      <div>
-        <h2>Education</h2>
-        <ul class="bullets">
-          <li>M.S., Business Intelligence and Data Analytics — Saint Mary’s University of Minnesota — Dec 2021.</li>
-          <li>Graduate Certificate, Artificial Intelligence — Saint Mary’s University of Minnesota — Dec 2021.</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Certifications and Recognition</h2>
-        <ul class="bullets">
-          <li><a href = "https://botstore.automationanywhere.com/bot/product-review-data-insights" target="_blank">3rd Place Agentic Bounty Automation Anywhere</a></li>
-          <li>MCP Fundamentals — Hugging Face — Jun 2025.</li>
-          <li>MCP Course Unit 3: Automation in Production — Hugging Face — Sep 2025.</li>
-          <li>Automation Anywhere — Mar 2025.</li>
-          <li>Product Management Mentorship — Apr 2025.</li>
-          <li>Achievements — Multi-time Hackathon Champion; DeepRacer winning team; trained 200+ IT professionals on MCPs and AI adoption.</li>
-        </ul>
-      </div>
-    </section>
+        <div class="role">
 
-    <section class="section section--filler">
-      <h2>Strengths</h2>
-      <div class="skills">
-        <span class="skill">Stakeholder Collaboration</span>
-        <span class="skill">Cross-functional Leadership</span>
-        <span class="skill">Discovery and Problem Structuring</span>
-        <span class="skill">Data-Informed Decisions</span>
-        <span class="skill">Presentation and Demo Leadership</span>
-        <span class="skill">Technology Translation</span>
-        <span class="skill">Agile Mindset</span>
-        <span class="skill">Content Accessibility</span>
+          <div class="rolehead">
+            <div class="title">IT Engineer</div>
+            <div class="org">University of Phoenix</div>
+            <div class="meta">Remote · May 2023 - Present</div>
+          </div>
+
+          <ul>
+
+            <li>Built Power BI/DAX dashboards supporting SPI tracking and W/F forecasting, reducing analytics turnaround from days to hours.</li>
+
+            <li>Converted legacy Oracle SQL into Redshift-based analytics tables using CTEs, joins, manual pivots, and event-ordering logic to reproduce trusted reporting outputs.</li>
+
+            <li>Designed and supported AWS analytics pipelines using S3, Redshift, Athena, Lambda, and Airflow-supported workflows for operational reporting, forecasting, and exploratory analysis.</li>
+
+            <li>Performed Redshift data reconciliation, historical backfills, and SQL transformation work to correct data gaps and improve reliability of downstream analytics.</li>
+
+            <li>Built AWS MSK/Kafka consumers that processed event data for Segment audiences and journeys, CSV delivery, workflow inputs, and AWS Step Functions triggers.</li>
+
+            <li>Prepared Salesforce knowledge-base content for LLM-assisted search by cleaning source articles, structuring metadata JSON, and creating FAISS vector indexes.</li>
+
+            <li>Designed guardrailed API access to Salesforce student-tracking data, enabling analytics teams to query operational data while maintaining governance.</li>
+
+            <li>Worked across GitHub and Bitbucket repositories using PR reviews, branch management, merge-conflict resolution, Terraform workflows, Spacelift, SourceTree, and VS Code tooling.</li>
+
+            <li>Delivered analytics demos and walkthroughs to technical and non-technical stakeholders to explain metrics, dashboards, data limitations, and field definitions.</li>
+
+          </ul>
+
+        </div>
+
+        <div class="role">
+
+          <div class="rolehead">
+            <div class="title">Math Teacher & Lead Teacher</div>
+            <div class="org">Multiple Schools</div>
+            <div class="meta">Utah & Oregon · 2016 - 2022</div>
+          </div>
+
+          <ul>
+
+            <li>Taught Statistics, AP Calculus, and secondary mathematics courses.</li>
+
+            <li>Used performance data and dashboards to identify patterns and guide instructional interventions.</li>
+
+            <li>Served as department head for 400+ students and supported curriculum design and digital learning delivery.</li>
+
+            <li>Built LMS-based coursework and assessments focused on measurable outcomes and student success.</li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+      <div class="grid" style="gap:14px">
+
+        <section class="section projects">
+
+          <h2>Selected Work</h2>
+
+          <div class="proj">
+            <b>SQL Transformation & Redshift Modeling</b>
+            <div class="hint">Converted Oracle SQL logic into Redshift outputs using complex joins, manual pivots, and reconciliation checks.</div>
+          </div>
+
+          <div class="proj">
+            <b>LLM-Ready Knowledge Retrieval</b>
+            <div class="hint">Cleaned Salesforce knowledge-base articles and created FAISS vector indexes with metadata JSON for an LLM search tool app.</div>
+          </div>
+
+          <div class="proj">
+            <b>Event Pipeline Development</b>
+            <div class="hint">Built AWS MSK/Kafka consumers supporting Segment audiences, workflow triggers, and CSV delivery use cases.</div>
+          </div>
+
+          <div class="proj">
+            <b>Automation Anywhere Agentic Bounty Competition</b>
+            <div class="hint">
+              3rd Place project - reusable CSV/JSON workflow for LLM-generated product review insights
+              <br>
+              https://botstore.automationanywhere.com/bot/product-review-data-insights
+            </div>
+          </div>
+
+        </section>
+
+        <section class="section edu">
+
+          <h2>Education</h2>
+
+          <div class="item">
+            <div class="deg">M.S., Business Intelligence & Data Analytics</div>
+            <div class="school">Saint Mary’s University of Minnesota</div>
+          </div>
+
+          <div class="item">
+            <div class="deg">Graduate Certificate, Artificial Intelligence</div>
+            <div class="school">Saint Mary’s University of Minnesota</div>
+          </div>
+
+        </section>
+
       </div>
-    </section>
+
+    </div>
+    
   </main>
 </body>
 </html>
